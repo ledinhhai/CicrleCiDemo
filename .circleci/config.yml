@@ -9,6 +9,6 @@
     
      steps:
        - run: 
-        name: build project
-        command: |
-         dotnet build CicrleCiDemo/CicrleCiDemo.csproj
+          name: build project
+          command: |
+            dotnet build CicrleCiDemo/CicrleCiDemo.csproj
