@@ -30,4 +30,6 @@
    my_workflows:
     jobs:
      - build_code
-     - build_success
+     - build_success:
+      requires:
+           - build_code
