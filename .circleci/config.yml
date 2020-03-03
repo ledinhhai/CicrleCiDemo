@@ -1,8 +1,6 @@
  version: 2.1
-
  orbs:
   win: circleci/windows@2.2.0
-
  jobs:
    build:
      executor: win/default     
@@ -10,16 +8,14 @@
        - checkout
        - run: 
          name: build project
-         command: |
-          dotnet build CicrleCiDemo/CicrleCiDemo.csproj
-   deploy:
+         command: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
+  deploy:
      executor: win/default     
      steps:
        - deploy:
-         commands: |
-          ssh ec2-user@daovanhung.com deploy.sh "$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME" $CIRCLE_BRANCH $CIRCLE_SHA1
+         commands: ssh ec2-user@daovanhung.com deploy.sh "$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME" $CIRCLE_BRANCH $CIRCLE_SHA1
  workflows:
-   version: 2
+   version: 2.1
    my-workflows:
     jobs:
      -build
