@@ -2,6 +2,7 @@
  
  orbs:
   win: circleci/windows@2.2.0
+ 
  jobs:
    build:
      executor: win/default     
@@ -12,6 +13,6 @@
          command: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
  workflows:
    version: 2.1
-   my-workflows:
+   my_workflows:
     jobs:
      - build
