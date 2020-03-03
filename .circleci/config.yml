@@ -4,15 +4,10 @@
   win: circleci/windows@2.2.0
  
  jobs:
-   check_out_code:
-     executor: win/default     
-     steps:
-      - checkout
-      
-      
    build_code:
      executor: win/default     
      steps:
+      - checkout
       - run: 
           name: restore 
           command: dotnet restore CicrleCiDemo/CicrleCiDemo.csproj
@@ -20,10 +15,19 @@
       - run: 
           name: build project
           command: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
+      
+   build_success:
+     executor: win/default     
+     steps:
+      - run:
+          name: Hello World
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
          
  workflows:
    version: 2
    my_workflows:
     jobs:
-     - check_out_code
      - build_code
+     - build_success
