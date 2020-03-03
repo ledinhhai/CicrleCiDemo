@@ -7,11 +7,6 @@
    build_test:
      executor: win/default     
      steps:
-      - run:
-          name: Hello World
-          command: |
-            echo 'Build Project'
-            
       - checkout
       - run: 
           name: build project
