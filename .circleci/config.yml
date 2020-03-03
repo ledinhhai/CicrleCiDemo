@@ -7,7 +7,6 @@
    build_test:
      executor: win/default     
      steps:
-       - checkout
        - run: 
          name: build project
          command: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
