@@ -7,11 +7,13 @@
    build_test:
      executor: win/default     
      steps:
+       - checkout
        - run: 
          name: build project
          command: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
+         
  workflows:
-   version: 2.1
+   version: 2
    my_workflows:
     jobs:
      - build_test
