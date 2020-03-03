@@ -10,8 +10,9 @@
       - run:
           name: Hello World
           command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
+            echo 'Build Project'
+            
+      - checkout
       - run: 
           name: build project
           command: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
