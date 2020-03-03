@@ -6,9 +6,5 @@
  jobs:
    build:
      executor: win/default     
-    
      steps:
-       - run: 
-          name: build project
-          command: |
-            dotnet build CicrleCiDemo.csproj
+       - run: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
