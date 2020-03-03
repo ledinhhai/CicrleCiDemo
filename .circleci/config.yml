@@ -12,6 +12,15 @@
          name: build project
          command: |
           dotnet build CicrleCiDemo/CicrleCiDemo.csproj
+   deploy:
+     executor: win/default     
+     steps:
        - deploy:
          commands: |
           ssh ec2-user@daovanhung.com deploy.sh "$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME" $CIRCLE_BRANCH $CIRCLE_SHA1
+ workflows:
+   version: 2
+   my-workflows:
+    jobs:
+     -build
+     -deploy
