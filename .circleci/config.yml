@@ -4,7 +4,7 @@
   win: circleci/windows@2.2.0
  
  jobs:
-   build:
+   build_test:
      executor: win/default     
      steps:
        - checkout
@@ -15,4 +15,4 @@
    version: 2.1
    my_workflows:
     jobs:
-     - build
+     - build_test
