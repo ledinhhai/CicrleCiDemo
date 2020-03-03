@@ -8,7 +8,6 @@
      executor: win/default     
     
      steps:
-       - checkout
        - run: 
         name: build project
         command: |
