@@ -31,5 +31,5 @@
     jobs:
      - build_code
      - build_success:
-      requires:
+         requires:
            - build_code
