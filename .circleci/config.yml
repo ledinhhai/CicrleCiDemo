@@ -4,10 +4,19 @@
   win: circleci/windows@2.2.0
  
  jobs:
-   build_test:
+   check_out_code:
      executor: win/default     
      steps:
       - checkout
+      
+      
+   build_code:
+     executor: win/default     
+     steps:
+      - run: 
+          name: restore 
+          command: dotnet restore CicrleCiDemo/CicrleCiDemo.csproj
+     
       - run: 
           name: build project
           command: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
@@ -16,4 +25,5 @@
    version: 2
    my_workflows:
     jobs:
-     - build_test
+     - check_out_code
+     - build_code
