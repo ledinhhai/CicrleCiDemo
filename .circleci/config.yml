@@ -12,6 +12,9 @@
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
+      - run: 
+          name: build project
+          command: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
          
  workflows:
    version: 2
