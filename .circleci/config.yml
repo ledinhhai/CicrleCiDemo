@@ -1,14 +1,35 @@
  version: 2.1
-
+ 
  orbs:
   win: circleci/windows@2.2.0
-
+ 
  jobs:
-   build:
+   build_code:
      executor: win/default     
      steps:
-       - checkout
-       - run: 
+      - checkout
+      - run: 
+          name: restore 
+          command: dotnet restore CicrleCiDemo/CicrleCiDemo.csproj
+     
+      - run: 
           name: build project
+          command: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
+      
+   build_success:
+     executor: win/default     
+     steps:
+      - run:
+          name: Hello World
           command: |
-            dotnet build CicrleCiDemo/CicrleCiDemo.csproj
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
+         
+ workflows:
+   version: 2
+   my_workflows:
+    jobs:
+     - build_code
+     - build_success:
+         requires:
+           - build_code
