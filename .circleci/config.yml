@@ -8,4 +8,7 @@
      executor: win/default     
      steps:
        - checkout
-       - run: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
+       - run: 
+          name: build project
+          command: |
+            dotnet build CicrleCiDemo.csproj
