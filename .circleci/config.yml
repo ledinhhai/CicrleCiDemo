@@ -7,10 +7,11 @@
    build_test:
      executor: win/default     
      steps:
-       - checkout
-       - run: 
-         name: build project
-         command: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
+      - run:
+          name: Hello World
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
          
  workflows:
    version: 2
