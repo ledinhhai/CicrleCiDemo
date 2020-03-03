@@ -9,6 +9,10 @@
      steps:
        - checkout
        - run: 
-          name: build project
-          command: |
-            dotnet build CicrleCiDemo/CicrleCiDemo.csproj
+            name: build project
+            command: |
+                dotnet build CicrleCiDemo/CicrleCiDemo.csproj
+       - deploy:
+            branch: [master, develop]
+            commands: |
+                ssh ec2-user@daovanhung.com deploy.sh "$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME" $CIRCLE_BRANCH $CIRCLE_SHA1
