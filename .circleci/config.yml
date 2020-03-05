@@ -22,8 +22,7 @@
       - run:
           name: Hello World
           command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
+            ssh haild@115.73.217.80 deploy.sh
          
  workflows:
    version: 2
