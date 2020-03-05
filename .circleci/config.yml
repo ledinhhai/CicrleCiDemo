@@ -17,9 +17,8 @@
           command: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
       
    deploy:
-     docker
      steps:
-      - deploy:
+      - run:
           command: ssh haild@115.73.217.80 deploy.sh
          
  workflows:
