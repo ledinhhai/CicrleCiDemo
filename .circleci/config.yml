@@ -17,6 +17,8 @@
           command: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
       
    deploy:
+     machine: # executor type
+      image: ubuntu-1604:201903-01
      steps:
       - run:
           command: ssh haild@115.73.217.80 deploy.sh
