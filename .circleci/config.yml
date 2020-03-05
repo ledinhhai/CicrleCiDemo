@@ -17,7 +17,6 @@
           command: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
       
    build_success:
-     executor: win/default     
      steps:
       - run:
           name: Hello World
