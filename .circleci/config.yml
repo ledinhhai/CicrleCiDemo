@@ -4,7 +4,7 @@
   win: circleci/windows@2.2.0
  
  jobs:
-   build_code:
+   build:
      executor: win/default     
      steps:
       - checkout
@@ -16,7 +16,7 @@
           name: build project
           command: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
       
-   build_success:
+   deploy:
      steps:
       - run:
           name: Hello World
@@ -27,7 +27,7 @@
    version: 2
    my_workflows:
     jobs:
-     - build_code
-     - build_success:
+     - build
+     - deploy:
          requires:
-           - build_code
+           - build
