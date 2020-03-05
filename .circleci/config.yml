@@ -21,7 +21,7 @@
       image: ubuntu-1604:201903-01
      steps:
       - run:
-          command: ssh haild@115.73.217.80:2020 deploy.sh
+          command: ssh haild@115.73.217.80 -p 2020 deploy.sh
          
  workflows:
    version: 2
