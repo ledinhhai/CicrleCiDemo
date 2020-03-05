@@ -17,11 +17,8 @@
           command: dotnet build CicrleCiDemo/CicrleCiDemo.csproj
       
    deploy:
-     steps:
-      - run:
-          name: Hello World
-          command: |
-            ssh haild@115.73.217.80 deploy.sh
+     command: |
+       ssh haild@115.73.217.80 deploy.sh
          
  workflows:
    version: 2
