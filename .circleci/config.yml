@@ -27,7 +27,7 @@
       image: ubuntu-1604:201903-01
      steps:
       - run:
-          command: ssh nghia@115.73.217.80 -p 21 deploy.bat 
+          command: ssh nghia@115.73.217.80 -p 21 deploy.bat
          
  workflows:
    version: 2
