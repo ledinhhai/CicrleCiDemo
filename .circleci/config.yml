@@ -33,9 +33,6 @@
    my_workflows:
     jobs:
      - build
-     - deploy:
-         requires:
-           - build
      - deploy-window:
          requires:
            - build
