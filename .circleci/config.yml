@@ -22,6 +22,10 @@
      steps:
       - run:
           command: ssh haild@115.73.217.80 -p 2020 ./deploy.sh
+   deploy-window:
+     executor: win/default
+     steps:
+      - run:
           command: ssh nghia@115.73.217.80 -p 21 ./deploy.sh
          
  workflows:
@@ -30,5 +34,8 @@
     jobs:
      - build
      - deploy:
+         requires:
+           - build
+     - deploy-window:
          requires:
            - build
