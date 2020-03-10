@@ -23,7 +23,8 @@
       - run:
           command: ssh haild@115.73.217.80 -p 2020 ./deploy.sh
    deploy-window:
-     executor: win/default
+     machine: # executor type
+      image: ubuntu-1604:201903-01
      steps:
       - run:
           command: ssh nghia@115.73.217.80 -p 21 deploy.bat
