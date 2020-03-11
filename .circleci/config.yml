@@ -28,7 +28,7 @@
      steps:
       - add_ssh_keys:
           fingerprints:
-            - fd:66:00:0c:0e:04:ee:f5:dc:ce:a2:8b:72:44:0a:cc
+            - fd:66:00:0c:0e:04:ee:f5:dc:ce:a2:8b:72:44:0a:cc 
       - run:
           command: ssh nghia@115.73.217.80 -p 21 deploy.bat 
          
