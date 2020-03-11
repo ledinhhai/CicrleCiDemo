@@ -30,7 +30,7 @@
           fingerprints:
             - 5f:c3:5c:65:4e:e6:40:86:4a:6b:09:d9:15:56:79:7d
       - run:
-          command: ssh nghia@115.73.217.80 -p 21 deploy.bat
+          command: ssh nghia@115.73.217.80 -p 21 deploy.bat 
          
  workflows:
    version: 2
