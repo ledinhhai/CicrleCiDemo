@@ -38,5 +38,11 @@
     jobs:
      - build
      - deploy-window:
+         filters:
+          branches:
+            ignore: /.*/
+          tags:
+            only:
+            - v0.5
          requires:
            - build
