@@ -36,6 +36,7 @@
    version: 2
    my_workflows:
     jobs:
+     - build
      - deploy-window:
          filters:
           branches:
