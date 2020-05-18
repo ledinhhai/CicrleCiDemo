@@ -40,6 +40,6 @@
      - deploy-window:
          filters:
           branches:
-            only: ignore: /.*/
+            ignore: /.*/
           tags:
             only: v0.7
